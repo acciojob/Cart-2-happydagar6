@@ -7,7 +7,7 @@ export const CartContext = createContext();
 const initialState = {
   cart: [
     { id: 1, name: "Laptop", price: 1000, quantity: 1 },
-    { id: 2, name: "Phone", price: 500, quantity: 2 },
+    { id: 2, name: "Phone", price: 500, quantity: 1 },
     { id: 3, name: "Tablet", price: 300, quantity: 1 },
   ],
 };

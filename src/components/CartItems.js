@@ -19,7 +19,7 @@ const CartItems = () => {
   // Handle decrement quantity
   const handleDecrement = (id) => {
     dispatch({ type: "DECREMENT_QUANTITY", payload: id });
-  }
+  };
 
   // Handle remove item from cart
   const handleClearCart = () => {
