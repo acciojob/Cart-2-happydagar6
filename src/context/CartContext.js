@@ -6,10 +6,10 @@ export const CartContext = createContext();
 // Define the initial state of the cart
 const initialState = {
   cart: [
-    { id: 1, name: "Laptop", price: 2500, amount: 1 },
+    { id: 1, name: "Laptop", price: 1000, amount: 1 },
     { id: 2, name: "Phone", price: 500, amount: 1 },
-    { id: 3, name: "Tablet", price: 300, amount: 1 },
-    { id: 4, name: "Headphones", price: 500, amount: 1 },
+    { id: 3, name: "Tablet", price: 500, amount: 1 },
+    { id: 4, name: "Headphones", price: 499.97, amount: 1 },
   ],
 };
 
@@ -51,14 +51,26 @@ const cartReducer = (state, action) => {
         ),
       };
     case "DECREMENT_QUANTITY":
+      {
+      const targetItem = state.cart.find((item) => item.id === action.payload);
+      if (!targetItem) {
+        return state;
+      }
+      if (targetItem.amount === 1) {
+        return {
+          ...state,
+          cart: state.cart.filter((item) => item.id !== action.payload),
+        };
+      }
       return {
         ...state,
         cart: state.cart.map((item) =>
           item.id === action.payload
-            ? { ...item, amount: Math.max(item.amount - 1, 1) }
+            ? { ...item, amount: item.amount - 1 }
             : item,
         ),
       };
+    }
 
     case "CLEAR_CART":
         return {
