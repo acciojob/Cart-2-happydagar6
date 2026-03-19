@@ -29,7 +29,7 @@ const CartItems = () => {
   const handleRemove = (id) => {
     dispatch({ type: "REMOVE_FROM_CART", payload: id });
   }
-  
+
   return (
     <div id="main" style={{ padding: '20px', maxWidth: '800px', margin: '0 auto' }}>
       <h1>Shopping Cart</h1>
@@ -90,6 +90,7 @@ const CartItems = () => {
 
                 {/* Remove button */}
                 <button
+                  id={`cart-item-remove-${item.id}`}
                   onClick={() => handleRemove(item.id)}
                   style={{
                     backgroundColor: '#ff4444',

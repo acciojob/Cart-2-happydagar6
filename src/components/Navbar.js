@@ -10,10 +10,15 @@ const Navbar = () => {
 
     return (
         <nav style={{ padding: "20px", backgroundColor: "#333", color: "white" }}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
                 <h2>🛒 My Store</h2>
-                <div id="nav-cart-item-count" style={{ fontSize: "18px" }}>
-                    Cart Items: {totalItems}
+                <div style={{ textAlign: "right" }}>
+                    <p style={{ margin: "0 0 10px 0", fontSize: "14px" }}>
+                        Using useReducer for state management
+                    </p>
+                    <div id="nav-cart-item-count" style={{ fontSize: "18px", fontWeight: "bold" }}>
+                        {totalItems}
+                    </div>
                 </div>
             </div>
         </nav>
