@@ -6,9 +6,10 @@ export const CartContext = createContext();
 // Define the initial state of the cart
 const initialState = {
   cart: [
-    { id: 1, name: "Laptop", price: 1000, amount: 1 },
+    { id: 1, name: "Laptop", price: 2500, amount: 1 },
     { id: 2, name: "Phone", price: 500, amount: 1 },
     { id: 3, name: "Tablet", price: 300, amount: 1 },
+    { id: 4, name: "Headphones", price: 500, amount: 1 },
   ],
 };
 
