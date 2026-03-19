@@ -6,9 +6,9 @@ export const CartContext = createContext();
 // Define the initial state of the cart
 const initialState = {
   cart: [
-    { id: 1, name: "Laptop", price: 1000, quantity: 1 },
-    { id: 2, name: "Phone", price: 500, quantity: 1 },
-    { id: 3, name: "Tablet", price: 300, quantity: 1 },
+    { id: 1, name: "Laptop", price: 1000, amount: 1 },
+    { id: 2, name: "Phone", price: 500, amount: 1 },
+    { id: 3, name: "Tablet", price: 300, amount: 1 },
   ],
 };
 
@@ -45,7 +45,7 @@ const cartReducer = (state, action) => {
         ...state,
         cart: state.cart.map((item) =>
           item.id === action.payload
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, amount: item.amount + 1 }
             : item,
         ),
       };
@@ -54,7 +54,7 @@ const cartReducer = (state, action) => {
         ...state,
         cart: state.cart.map((item) =>
           item.id === action.payload
-            ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+            ? { ...item, amount: Math.max(item.amount - 1, 1) }
             : item,
         ),
       };

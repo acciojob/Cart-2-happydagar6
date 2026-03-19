@@ -7,7 +7,7 @@ const CartItems = () => {
 
   // Calculate total amount
   const totalAmount = state.cart.reduce(
-    (sum, item) => sum + (item.price * item.quantity),
+    (sum, item) => sum + (item.price * item.amount),
     0
   );
 
@@ -70,7 +70,7 @@ const CartItems = () => {
                     -
                   </button>
                   <span style={{ marginRight: '10px', marginLeft: '10px' }}>
-                    Quantity: {item.quantity}
+                    Quantity: {item.amount}
                   </span>
                   <button
                     id={`increment-btn-${item.id}`}
@@ -83,8 +83,8 @@ const CartItems = () => {
 
                 {/* Item total amount */}
                 <p>
-                  Amount: $<span id={`cart-amount-${item.id}`}>
-                    {item.price * item.quantity}
+                  Amount: <span id={`cart-amount-${item.id}`}>
+                    {item.amount}
                   </span>
                 </p>
 
