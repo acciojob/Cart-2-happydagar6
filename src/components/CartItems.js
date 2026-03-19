@@ -135,7 +135,7 @@ const CartItems = () => {
               paddingTop: '20px'
             }}
           >
-            Total Cart Amount: $<span id="cart-total-amount">{totalAmount}</span>
+            Total Cart Amount: <span id="cart-total-amount">{Math.round(totalAmount)}</span>
           </div>
         </>
       )}
