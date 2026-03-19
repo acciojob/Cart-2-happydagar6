@@ -5,8 +5,8 @@ const Navbar = () => {
     // Access cart state from Cart
     const { state } = useContext(CartContext);
 
-    // Calculate total items in cart
-    const totalItems = state.cart.reduce((sum, item) => sum + item.amount, 0);
+    // Calculate total cart elements
+    const totalItems = state.cart.length;
 
     return (
         <nav style={{ padding: "20px", backgroundColor: "#333", color: "white" }}>

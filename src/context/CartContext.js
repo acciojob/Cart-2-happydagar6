@@ -51,26 +51,14 @@ const cartReducer = (state, action) => {
         ),
       };
     case "DECREMENT_QUANTITY":
-      {
-      const targetItem = state.cart.find((item) => item.id === action.payload);
-      if (!targetItem) {
-        return state;
-      }
-      if (targetItem.amount === 1) {
-        return {
-          ...state,
-          cart: state.cart.filter((item) => item.id !== action.payload),
-        };
-      }
       return {
         ...state,
         cart: state.cart.map((item) =>
           item.id === action.payload
-            ? { ...item, amount: item.amount - 1 }
+            ? { ...item, amount: Math.max(item.amount - 1, 1) }
             : item,
         ),
       };
-    }
 
     case "CLEAR_CART":
         return {
